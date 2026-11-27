@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIXLY | Home Services in Sukkur</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="#home" class="logo">FIX<span>LY.</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#providers">Providers</a>
+            <a href="#my-bookings" id="navBookings">My Bookings</a>
+            <a href="#admin" id="navAdmin" hidden>Admin</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <span id="navUser" class="nav-user" hidden></span>
+            <button id="loginBtn" class="ghost-button" type="button">Log in</button>
+            <button id="logoutBtn" class="ghost-button" type="button" hidden>Log out</button>
+            <a href="#booking" class="nav-button" id="navBook">Book a Service</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">TRUSTED HOME SERVICES IN SUKKUR</span>
+            <h1>
+                Your Home Deserves
+                <span>Reliable Experts at Your Doorstep.</span>
+            </h1>
+            <p>
+                Find trusted electricians, plumbers and AC technicians.
+                Compare providers and book your service in just a few taps.
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="primary-button">Explore Services</a>
+                <a href="#how-it-works" class="secondary-button">How It Works</a>
+            </div>
+            <div class="hero-stats">
+                <div><h3 id="statServices">3</h3><p>Service Categories</p></div>
+                <div><h3 id="statProviders">–</h3><p>Active Providers</p></div>
+                <div><h3>PKR</h3><p>Transparent Pricing</p></div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-card">
+                <div class="hero-icon">🛠️</div>
+                <h3>Home Services Made Easy</h3>
+                <p>One platform. Trusted professionals.</p>
+                <span class="availability">● Booking open</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+        <div class="section-heading">
+            <span class="tag">OUR SERVICES</span>
+            <h2>What Do You Need Help With?</h2>
+            <p>Choose a service and find the right professional.</p>
+        </div>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Electrician</h3>
+                <p>Electrical repairs, wiring and installations.</p>
+                <button class="text-button" data-book-service="Electrician" type="button">Find Electricians →</button>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Plumber</h3>
+                <p>Leakage repairs, pipe fittings and maintenance.</p>
+                <button class="text-button" data-book-service="Plumber" type="button">Find Plumbers →</button>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">❄️</div>
+                <h3>AC Technician</h3>
+                <p>AC installation, servicing and repairs.</p>
+                <button class="text-button" data-book-service="AC Technician" type="button">Find Technicians →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVIDERS -->
+    <section class="section providers-section" id="providers">
+        <div class="section-heading">
+            <span class="tag">OUR PROFESSIONALS</span>
+            <h2>Find Your Trusted Provider</h2>
+            <p>Compare ratings, experience and visit fees.</p>
+        </div>
+
+        <div class="provider-controls">
+            <input type="text" id="searchInput" placeholder="Search by provider, service or area..." aria-label="Search providers">
+            <select id="serviceFilter" aria-label="Filter by service">
+                <option value="All">All Services</option>
+                <option value="Electrician">Electrician</option>
+                <option value="Plumber">Plumber</option>
+                <option value="AC Technician">AC Technician</option>
+            </select>
+        </div>
+
+        <div class="provider-grid" id="providerGrid"></div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+        <div class="section-heading">
+            <span class="tag">SIMPLE PROCESS</span>
+            <h2>How FIXLY Works</h2>
+            <p>Getting home services has never been easier.</p>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-card"><span>01</span><h3>Choose a Service</h3><p>Select an electrician, plumber or AC technician.</p></div>
+            <div class="step-card"><span>02</span><h3>Compare Providers</h3><p>Explore provider profiles, ratings and visit prices.</p></div>
+            <div class="step-card"><span>03</span><h3>Book Online</h3><p>Select your appointment date and preferred time.</p></div>
+            <div class="step-card"><span>04</span><h3>Get Your Service</h3><p>Your selected provider visits your home.</p></div>
+        </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section booking-section" id="booking">
+        <div class="section-heading">
+            <span class="tag">BOOK YOUR SERVICE</span>
+            <h2>Schedule a Home Service</h2>
+            <p>Complete the form to request your booking.</p>
+        </div>
+
+        <div class="booking-container">
+            <div id="loginPrompt" class="login-prompt" hidden>
+                <strong>Log in to book.</strong> You need a free customer account to make and track bookings.
+                <button type="button" class="text-button" id="loginPromptBtn">Log in / Sign up</button>
+            </div>
+
+            <form id="bookingForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="bookingService">Select Service</label>
+                        <select id="bookingService" required>
+                            <option value="">Choose a service</option>
+                            <option value="Electrician">Electrician</option>
+                            <option value="Plumber">Plumber</option>
+                            <option value="AC Technician">AC Technician</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingProvider">Select Provider</label>
+                        <select id="bookingProvider" required>
+                            <option value="">Choose a provider</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingDate">Appointment Date</label>
+                        <input type="date" id="bookingDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingTime">Preferred Time</label>
+                        <select id="bookingTime" required>
+                            <option value="">Choose time</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="customerAddress">Address in Sukkur</label>
+                        <input type="text" id="customerAddress" maxlength="200" placeholder="Enter your area and address" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="problemDescription">Describe Your Problem</label>
+                        <textarea id="problemDescription" rows="4" maxlength="1000" placeholder="Tell us what needs to be repaired..." required></textarea>
+                    </div>
+                </div>
+
+                <div class="booking-note">
+                    <strong>Visit fee:</strong> <span id="feeText">shown after you choose a provider</span>.
+                    This covers the technician's visit and inspection. Final repair costs may differ and are agreed with the provider.
+                </div>
+
+                <button type="submit" class="primary-button submit-button">Confirm Booking</button>
+            </form>
+
+            <div id="bookingMessage" class="booking-message" hidden></div>
+        </div>
+    </section>
+
+    <!-- MY BOOKINGS -->
+    <section class="section" id="my-bookings">
+        <div class="section-heading">
+            <span class="tag" id="dashTag">CUSTOMER DASHBOARD</span>
+            <h2 id="dashTitle">My Bookings</h2>
+            <p id="dashSub">View and manage your bookings.</p>
+        </div>
+        <div id="bookingsList" class="bookings-list"></div>
+    </section>
+
+    <!-- ADMIN -->
+    <section class="section admin-section" id="admin" hidden>
+        <div class="section-heading">
+            <span class="tag">ADMIN</span>
+            <h2>Platform Overview</h2>
+            <p>Monitor activity and manage providers.</p>
+        </div>
+
+        <div class="stats-grid" id="adminStats"></div>
+
+        <div class="admin-panel">
+            <h3>Providers</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Name</th><th>Service</th><th>Area</th><th>Rating</th><th>Fee (PKR)</th><th>Status</th><th></th></tr></thead>
+                    <tbody id="adminProviders"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="admin-panel">
+            <h3>Add a Provider</h3>
+            <form id="providerForm" class="form-grid" novalidate>
+                <div class="form-group"><label for="pName">Full name</label><input id="pName" required></div>
+                <div class="form-group"><label for="pService">Service</label>
+                    <select id="pService"><option>Electrician</option><option>Plumber</option><option>AC Technician</option></select></div>
+                <div class="form-group"><label for="pEmail">Login email</label><input id="pEmail" type="email" required></div>
+                <div class="form-group"><label for="pPhone">Phone</label><input id="pPhone" placeholder="03XXXXXXXXX" maxlength="11" required></div>
+                <div class="form-group"><label for="pArea">Area</label><input id="pArea" placeholder="e.g. Military Road, Sukkur" required></div>
+                <div class="form-group"><label for="pPassword">Temporary password</label><input id="pPassword" type="password" minlength="8" required></div>
+                <div class="form-group"><label for="pExperience">Experience (years)</label><input id="pExperience" type="number" min="0" max="60" value="1"></div>
+                <div class="form-group"><label for="pFee">Visit fee (PKR)</label><input id="pFee" type="number" min="0" value="500"></div>
+                <div class="form-group full-width"><button type="submit" class="primary-button">Add Provider</button></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+        <div class="about-content">
+            <span class="tag">ABOUT FIXLY</span>
+            <h2>Making Home Services Simple and Reliable.</h2>
+            <p>FIXLY is a home-services marketplace designed for homeowners in Sukkur. It connects customers with electricians, plumbers and AC technicians.</p>
+            <p>Our goal is to make finding reliable service providers easier through transparent visit pricing, ratings and a re-visit guarantee.</p>
+            <a href="#booking" class="primary-button">Book a Service</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <a href="#home" class="logo footer-logo">FIX<span>LY.</span></a>
+            <p>Reliable Home Services. Simplified.</p>
+            <p>Sukkur, Sindh, Pakistan</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <a href="#services">Services</a>
+            <a href="#providers">Providers</a>
+            <a href="#about">About Us</a>
+            <a href="#my-bookings">My Bookings</a>
+        </div>
+        <div>
+            <h4>Our Services</h4>
+            <p>Electrician</p>
+            <p>Plumber</p>
+            <p>AC Technician</p>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 FIXLY — University Project.</p>
+        </div>
+    </footer>
+
+    <!-- AUTH DIALOG -->
+    <dialog id="authDialog" class="auth-dialog">
+        <form method="dialog" class="dialog-close"><button aria-label="Close">✕</button></form>
+        <div class="auth-tabs">
+            <button type="button" id="tabLogin" class="active">Log in</button>
+            <button type="button" id="tabRegister">Sign up</button>
+        </div>
+
+        <form id="loginForm" class="auth-form" novalidate>
+            <div class="form-group"><label for="loginEmail">Email</label><input id="loginEmail" type="email" autocomplete="email" required></div>
+            <div class="form-group"><label for="loginPassword">Password</label><input id="loginPassword" type="password" autocomplete="current-password" required></div>
+            <p class="form-error" id="loginError" role="alert" hidden></p>
+            <button class="primary-button" type="submit">Log in</button>
+        </form>
+
+        <form id="registerForm" class="auth-form" hidden novalidate>
+            <div class="form-group"><label for="regName">Full name</label><input id="regName" autocomplete="name" required></div>
+            <div class="form-group"><label for="regEmail">Email</label><input id="regEmail" type="email" autocomplete="email" required></div>
+            <div class="form-group"><label for="regPhone">Phone</label><input id="regPhone" placeholder="03XXXXXXXXX" maxlength="11" autocomplete="tel" required></div>
+            <div class="form-group"><label for="regPassword">Password (min 8 characters)</label><input id="regPassword" type="password" minlength="8" autocomplete="new-password" required></div>
+            <p class="form-error" id="registerError" role="alert" hidden></p>
+            <button class="primary-button" type="submit">Create account</button>
+        </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
